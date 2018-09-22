@@ -27,12 +27,48 @@
     <ClInclude Include="PacMan.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="map.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="object.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Enermy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RedOne.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueOne.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="YellowOne.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="PacMan.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="map.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="object.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Enermy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RedOne.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueOne.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="YellowOne.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
