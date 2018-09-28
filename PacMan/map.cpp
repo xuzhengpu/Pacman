@@ -36,7 +36,7 @@ void map::DrawPeas(HDC & hdc)
 		for (int j = 0; j < MAPLENTH; j++)
 		{
 			
-			if (!peaMapData[i][j])
+			if (peaMapData[i][j])
 			{
 				Ellipse(hdc, (LD / 2 - PD) + j * LD, (LD / 2 - PD) + i * LD, (LD / 2 + PD) + j * LD, (LD / 2 + PD) + i * LD);
 
