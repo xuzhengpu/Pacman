@@ -33,9 +33,9 @@ void object::AchiveCtrl()
 	}
 
 }
-bool object::Collision()
+bool object::Collision()   //判断是否撞墙， 撞墙返回1，不撞墙返回0
 {
-	bool flag = true;   //用来判断指令是否有效的标记  默认有效
+	bool flag = false;   //返回值  默认为0 （不撞墙）
 	AchiveCtrl();//更新行列
 	if (drow<0 || darray<0 || drow>MAPLENTH || darray>MAPLENTH)    // 
 	{
@@ -48,25 +48,33 @@ bool object::Collision()
 		case LEFT:
 			if (darray > 0 && !pstage->mapData[drow][darray - 1]) //判断下一个格子是否通行
 			{
-				flag = false;   //指令失效
+				flag = true;   //撞墙
 			}
 			break;
 
 		case RIGHT:
 			if (darray < MAPLENTH - 1 && !pstage->mapData[drow][darray + 1])
-				flag = false;  // 指令失效
+			{
+				flag = true;   //撞墙
+			}
 			break;
 		case UP:
 			if (drow > 0 && !pstage->mapData[drow - 1][darray])
-				flag = false;
+			{
+				flag = true;   //撞墙
+			}
 			break;
 		case DOWN:
-			if (drow > MAPLENTH - 1 && !pstage->mapData[drow + 1][darray])
-				flag = false;
+			if (drow < MAPLENTH - 1 && !pstage->mapData[drow + 1][darray])
+			{
+				flag = true;   //撞墙
+			}
 			break;
 		}
-		if (flag)
+		if (flag == false)  //没撞墙则把指令给tw
+		{
 			tw = twCommand;
+		}
 	}
 	mX = point.x;
 	mY = point.y;
@@ -75,21 +83,41 @@ bool object::Collision()
 	switch (tw)
 	{
 	case LEFT:
-		point.x -= speed;
+		if (darray > 0 && !pstage->mapData[drow][darray - 1]) //判断下一个格子是否通行
+		{
+			flag = false;
+			break;
+		}
 		if (point.x < MIN)
 			point.x = MAX;
+		point.x -= speed;
 		break;
 	case RIGHT:
+		if (darray < MAPLENTH - 1 && !pstage->mapData[drow][darray + 1])
+		{
+			flag = false;
+			break;
+		}
 		point.x += speed;
 		if (point.x >MAX)
 			point.x = MIN;
 		break;
 	case UP:
-		point.y -= speed;
+		if (drow > 0 && !pstage->mapData[drow - 1][darray])
+		{
+			flag = false;
+			break;
+		}
 		if (point.y < MIN)
 			point.y = MAX;
+		point.y -= speed;
 		break;
 	case DOWN:
+		if (drow < MAPLENTH - 1 && !pstage->mapData[drow + 1][darray])
+		{
+			flag = false;
+			break;
+		}
 		point.y += speed;
 		if (point.y > MAX)
 			point.y = MIN;

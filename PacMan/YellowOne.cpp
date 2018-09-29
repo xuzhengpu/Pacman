@@ -13,8 +13,8 @@ YellowOne::~YellowOne()
 
 void YellowOne::MakeDecision(bool b)
 {
-	int const DR = drow - player->GetRow();
-	int const DA = darray - player->GetArray();
+	int  DR = drow - player->GetRow();
+	int  DA = darray - player->GetArray();
 	if (!b)
 	{
 		if (DR*DR>DA*DA)

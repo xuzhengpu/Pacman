@@ -18,21 +18,20 @@ void RedOne::MakeDecision(bool b)
 	{
 		if (i % 4 == 0)
 		{
-			tw = UP ? twCommand = LEFT : twCommand = UP;
+			tw == UP ? twCommand = LEFT : twCommand = UP;
 		}
 		else if (i % 3 == 0)
 		{
-			tw=DOWN	? twCommand = RIGHT : twCommand = DOWN;
+			tw == DOWN	? twCommand = RIGHT : twCommand = DOWN;
 		}
 		else if (i % 2 == 0)
 		{
-			tw = RIGHT ? twCommand = UP : twCommand = RIGHT;
+			tw == RIGHT ? twCommand = UP : twCommand = RIGHT;
 
 		}
 		else
 		{
-			tw = LEFT ? twCommand = DOWN : twCommand = LEFT;
-
+			tw == LEFT ? twCommand = DOWN : twCommand = LEFT;
 		}
 	}
 	if (i % 4 == 0)

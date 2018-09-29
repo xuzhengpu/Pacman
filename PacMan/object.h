@@ -28,7 +28,7 @@ public:
 	int GetArray();
 	void DrawBlank(HDC & hdc);
 	void SetPosition(int row, int array);
-	map static *pstage;   //指向地图的指针
+	map  static *pstage;   //指向地图的指针
 protected:
 	TWARDS tw;    //枚举类型 对象的朝向
 	POINT point;   //中心坐标
